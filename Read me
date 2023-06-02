@@ -1,0 +1,68 @@
+steps to start server
+    1. if there is no ".env" file then create new one where "server.js" file present and add following code init
+        PORT = 8080
+        DATABASE_URL='mongodb://localhost:27017/MyContacts-Backend'
+        ACCESS_TOKEN_SECERT= "SAURABH123"
+    2. npm install 
+    3. npm run dev
+
+Links with api:
+    1. API link for register user
+        link:-http://localhost:8080/api/users/register
+        json Body:- {
+                    "userName":"Jhon",
+                    "email":"jhon@demo.com",
+                    "password":"Jhon@123"
+                    }
+    2.  API link for login user
+        link:-http://localhost:8080/api/users/login
+        json Body:-{
+                    "email":"jhon@demo.com",
+                    "password":"Jhon@123"
+                    }                
+        you will get responce of authentication token
+        ex:- {
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJOYW1lIjoiSmhvbiIsImVtYWlsIjoiamhvbkBkZW1vLmNvbSIsImlkIjoiNjQ3OWFjMzE2NDgyYTU3ODM5MzAyNjM4In0sImlhdCI6MTY4NTY5NTU2MCwiZXhwIjoxNjg1Njk2NDYwfQ.AzpHhkNc1Pdntc5G3EcBfNTSWRXVkMhhuy9GgVg-8Eg"
+                }            
+    3.  API for Get All contacts login user created 
+        link:- http://localhost:8080/api/contacts/
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token 
+
+    4.  API for Get single contact login user created 
+        link:- http://localhost:8080/api/contacts/id 
+        (where id = id of perticular contact which you need)
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token
+
+    5.  API for post contact  
+        link:- http://localhost:8080/api/contacts/ 
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token     
+        JSON Body :-{
+                    "name":"kingTring",
+                    "email":"kingTring@demo.com",
+                    "phone":"8087120050"
+                    }       
+
+    6.  API for Delete contact login user created 
+        link:- http://localhost:8080/api/contacts/id 
+        (where id = id of perticular contact which you need)
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token
+    
+    7.  API for get Current login user details 
+        link:- http://localhost:8080/api/users/current 
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token             
+
+    8.  API for put contact  
+        link:- http://localhost:8080/api/contacts/id 
+        (where id = id of perticular contact which you need)
+        Its Private contact so you need to pass token which you will get from login reponce 
+        paste copied accessToken in Auth => Bearer Token     
+        JSON Body :-{
+                    "name":"kingTring",
+                    "email":"kingTring@demo.com",
+                    "phone":"8087120050"
+                    }      
